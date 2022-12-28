@@ -1,7 +1,7 @@
 <?php
 //the default values of menu list
 $list = array("Home", "Shop", "Gallery->", "Contact Us");
-$player = array("Ronaldo", "Messi", "<-Back");
+$player = array("Messi", "Iniesta", "Xavi","<-Back");
 $menu = $list;
 if (isset($_GET['name'])) {
 	// change the list when click in menu

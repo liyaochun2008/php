@@ -126,6 +126,7 @@
 
 .menu li:hover {
     color: #d2206a;
+	transform: scale(1.3)
 }
 
 /* change the list in menu  */
@@ -306,7 +307,6 @@ form input {
 /* player page  */
 /* background image */
 #player main {
-    background-image: url('../assets/images/messi.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -343,8 +343,8 @@ form input {
     width: 50%;
 }
 
-#player section ul {
-    list-style-type: none;
+#player section {
+    text-align: justify;
 }
 
 #player section ul li {
@@ -383,6 +383,22 @@ form input {
     left: 0;
 }
 
+#shop div {
+   margin-top:600px;
+   color:white;
+}
+
+/* different font size in comments */
+#shop div>p:nth-child(odd){
+	font-size:30px;  
+   padding:20px;
+}
+
+#shop div>p:nth-child(even){
+	font-size:60px;  
+   padding:20px;
+}
+
 #shop ul li {
     text-align: center;
     color: white;
@@ -415,4 +431,38 @@ form input {
     border-radius: 8px;
     width: 300px;
     height: 200px;
+}
+
+
+/* testimonial page  */
+#testimonial form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid black;
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+
+#testimonial form input {
+    width: 100% ;
+}
+
+
+#testimonial form input[type='submit'] {
+    width: 120px;
+    height: 40px;
+}
+
+
+
+
+#testimonial form textarea {
+	margin: 10px 0;
+    height: 350px;
 }

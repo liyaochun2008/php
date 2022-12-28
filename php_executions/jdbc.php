@@ -1,6 +1,6 @@
 <!-- connect to mysql by using address and password -->
 <?php
-$servername = "3.67.132.32:51199";
+$servername = "localhost:3306";
 $username = "root";
 $password = "root";
 $database = "clubs";

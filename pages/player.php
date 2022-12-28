@@ -1,9 +1,8 @@
 <?php 
-// include 'connection.php';
+ include '../php_executions/players.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" style="height:100%">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,24 +12,17 @@
 </head>
 
 <body id="player" style="height:100%">
-    <h1> Leo Messi</h1> 
-    <main>
+    <h1>  <?php echo $fullname ?></h1> 
+    <main style=<?php echo "background-image:url(../assets/images/".strtolower($key).".png)" ?>>
     <section>
         <video width="480" height="360" controls autoplay>
-            <source src="../assets/videos/movie.ogg" type="video/ogg">
+            <source src=<?php echo "../assets/videos/".strtolower($key).".mp4" ?> type="video/mp4">
         </video>
     </section>
     <section>
-        <ul>
-            <li>11233333333333333333333333333</li>
-            <li>11233333333333333333333333333</li>
-            <li>11233333333333333333333333333</li>
-            <li>11233333333333333333333333333</li>
-            <li>11233333333333333333333333333</li>
-            <li>11233333333333333333333333333</li>
-            <li>11233333333333333333333333333</li>
-            <li>11233333333333333333333333333</li>
-        </ul>
+       <p>
+		  <?php echo $detail ?>
+		</p>
     </section>
 </main>
 </body>

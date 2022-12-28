@@ -1,3 +1,6 @@
+<?php
+include '../php_executions/contact_us.php';
+?>
 <!DOCTYPE html>
 <html lang="en" style="width:100%"  >
 <head>
@@ -9,13 +12,17 @@
 </head>
 <body id="contact" style="width:100%">
 	<!-- form  -->
-   <form>
+     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
      <h1>send us a message:</h1>
-     <input placeholder="Name"/>
-     <input placeholder="Email"/>
-     <input placeholder="Phone"/>
-     <textArea placeholder="message"></textArea>
+     <input placeholder="Name" name="name"/>
+     <input placeholder="Email"  name="email"/>
+     <input placeholder="Phone"  name="phone"/>
+     <textArea placeholder="message"  name="message"></textArea>
      <input type='submit' value='submit'/>
+	    <div style="color:red ">
+			<!-- cautions when meet problem in login -->
+            <?php echo $result;?>
+        </div>
    </form>
 </body>
 </html>
