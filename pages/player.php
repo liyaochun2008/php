@@ -15,7 +15,7 @@
     <h1>  <?php echo $fullname ?></h1> 
     <main style=<?php echo "background-image:url(../assets/images/".strtolower($key).".png)" ?>>
     <section>
-        <video width="480" height="360" controls autoplay>
+        <video controls autoplay>
             <source src=<?php echo "../assets/videos/".strtolower($key).".mp4" ?> type="video/mp4">
         </video>
     </section>

@@ -337,6 +337,12 @@ form input {
     #player section {
         flex-direction: row;
     }
+	#player section:nth-child(2){
+	    width:100%;
+	}
+	#player section p{
+		padding:10px;
+	}
 }
 
 #player section:first-child {
@@ -344,7 +350,7 @@ form input {
 }
 
 #player section {
-    text-align: justify;
+    text-align: center;
 }
 
 #player section ul li {
