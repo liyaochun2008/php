@@ -12,8 +12,10 @@ include '../php_executions/registeration.php';
     </head>
 
     <body id="register" style="height: 100%;">
+		    <!-- send the form data to the current PHP page for processing -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <h1>sign up your own account</h1>
+			<!-- form inputs for user to enter their desired username, password, nickname, birthday, email, and phone number -->
             <p><label for="username">username:</label> <input id="username" name="username" /></p>
             <p><label for="password">password:</label> <input id="password" name="password" /></p>
             <p><label for="nickname">nickname:</label> <input id="nickname" name="nickname" /></p>

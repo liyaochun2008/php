@@ -13,7 +13,7 @@ include '../php_executions/testimonial.php';
     <body id="testimonial" style="width: 100%;">
         <!-- form  -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <h1>Leave ur comments for us:</h1>
+            <h1>Leave your comments for us:</h1>
             <input id="name" name="name"   readonly/>
 			<input id="user" name="user"   readonly/>
             <textarea id="comments" name="comments" placeholder="comments"></textarea>

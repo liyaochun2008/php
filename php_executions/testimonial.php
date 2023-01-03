@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
       include 'jdbc.php';
 	  //insert into database
-      $sql_name ="INSERT INTO `comments` VALUES ('".$_POST["name"]."','".$_POST["user"]."','".date("Y-m-d")."','".$_POST["comments"]."')";
+      $sql_name ="INSERT INTO `comments` VALUES (null,'".$_POST["name"]."','".$_POST["user"]."','".date("Y-m-d")."','".$_POST["comments"]."',0)";
 	  $result_name = $conn->query($sql_name);
       if($result_name===false){
         $result= "server error pls try again";

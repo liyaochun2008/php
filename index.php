@@ -1,3 +1,11 @@
+<?php 
+session_start();
+// If there are items in the $_SESSION array
+if (count($_SESSION)) {
+	 // Set the $res variable to the 'user' element of the $_SESSION array
+    $admin = $_SESSION['admin'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 	<head>
@@ -10,7 +18,7 @@
 
 	<body id="index" style="height: 100%;">
 		<!-- // block menu fixed and dragable  -->
-		<ul class="menu" onmousedown="touch(this)" onmousemove="move(event)" onmouseup="clear()">
+		<ul class="menu" onmousedown="touch(this)" onmousemove="moving(event)" onmouseup="mouseUp()" onmouseleave="mouseUp()">
 			<li>MORE INFO</li>
 		</ul>
 		<!-- import header  -->
@@ -20,6 +28,7 @@
 		<!-- fixed footer -->
 		<footer>
 			<p>Copyright FC Barcelona 2022</p>
+			<?php echo '<a id="adminEntrance" onclick=goToAdmin()>Go to admin menu</a>' ?>   
 		</footer>
 	</body>
 	<script>
@@ -38,22 +47,25 @@
 				window.innerWidth > 800 ? 'calc(100% - 152px)' : 'calc(100% - 219px)';
 		};
 		let menu = ['Home', 'Shop', 'Gallery->', 'Contact Us'];
-		touch = (tar) => {
+		function touch(tar){
 			target = tar;
 			flag = true;
 		};
 		//monitor the x y axis when drag the menu
-		move = (e) => {
+		function moving (e) {
 			if (flag) {
 				target.style.left = e.pageX - 85 + 'px';
 				target.style.top = e.pageY - 55 + 'px';
 			}
 		};
-		onmouseup = (e) => {
+		function mouseUp (){
 			flag = false;
 		};
+		function goToAdmin(){
+			document.getElementsByTagName('iframe')[0].src = 'pages/admin/adminmenu.php';
+		}
 		// change iframe address to switch pages
-		clickMenu = (e) => {
+		let clickMenu = (e) => {
 			if (!e.target.innerText.includes('-')) {
 				pinpoint = e.target.innerText;
 				let url;

@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = "username or password cannot be empty";
   } else {
       include 'jdbc.php';
-      $sql_name ="SELECT password,nickname FROM `users` where username ='".$_POST['username']."';";
+      $sql_name ="SELECT password,nickname,accountState FROM `users` where username ='".$_POST['username']."';";
       $result_name = $conn->query($sql_name);
       if($result_name->num_rows==0){
         $result= "username not exist";
@@ -22,6 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo "session_id(): ".session_id().""; 
           echo "COOKIE: ".$_COOKIE["PHPSESSID"];
           $_SESSION['user'] = $row_name['nickname'];
+		  $_SESSION['id'] = $row_name['username'];
+		  $_SESSION['admin'] = $row_name['accountState'];
           $result = 'success';
 			//echo $_SESSION['user'] ;
 			//create localStorage to inform index page user logged in

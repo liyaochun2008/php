@@ -47,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo "COOKIE: ".$_COOKIE["PHPSESSID"];
           $_SESSION['user'] = $_POST['nickname'];
 		   $_SESSION['id'] = $row_name['username'];
+		   $_SESSION['admin'] = $row_name['accountState'];
           $result = 'register successfully';
 			//echo $_SESSION['user'] ;
 			//create localStorage to inform index page user logged in
